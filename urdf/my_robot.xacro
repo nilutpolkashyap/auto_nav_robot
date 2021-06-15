@@ -155,14 +155,14 @@
   <origin rpy="0 0 0" xyz="0.055 -0.06 0.0325"/>
   <parent link="base_link"/>
   <child link="wheel_rf_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="motor_rb" type="continuous">
   <origin rpy="0 0 0" xyz="-0.055 -0.06 0.0325"/>
   <parent link="base_link"/>
   <child link="wheel_rb_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="motor_lb" type="continuous">

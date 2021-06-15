@@ -1,6 +1,49 @@
 <?xml version="1.0" ?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+<transmission name="motor_rf_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_rf">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_rf_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="motor_rb_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_rb">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_rb_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="motor_lb_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_lb">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_lb_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="motor_lf_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_lf">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_lf_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
 
 <transmission name="motor_arm_tran">
   <type>transmission_interface/SimpleTransmission</type>

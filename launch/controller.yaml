@@ -1,16 +1,31 @@
-my_robot:
+my_robot_controller:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-
+  motor_rf_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_rf
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  motor_rb_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_rb
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  motor_lb_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_lb
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  motor_lf_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_lf
+    pid: {p: 100.0, i: 0.01, d: 10.0}
   motor_arm_position_controller:
     type: effort_controllers/JointPositionController
     joint: motor_arm
-    pid: {p: 0.0, i: 0.0, d: 0.0}
+    pid: {p: 100.0, i: 0.01, d: 10.0}
   motor_gripper_position_controller:
     type: effort_controllers/JointPositionController
     joint: motor_gripper
-    pid: {p: 0.0, i: 0.0, d: 0.0}
+    pid: {p: 100.0, i: 0.01, d: 10.0}
