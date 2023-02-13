@@ -1,0 +1,28 @@
+<launch>
+  <arg name="world" default="nav_world" />
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="1.0"/>
+  <arg name="z_pos" default="0.0"/>
+  
+  <param name="robot_description" command="$(find xacro)/xacro $(find bug_robot_description)/urdf/navigation.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model bug_robot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find bug_robot_description)/worlds/$(arg world).world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- <arg default="$(find bug_robot_description)/urdf/navigation.xacro" name="model"/>
+  <arg default="true" name="gui"/>
+  <arg default="$(find bug_robot_description)/launch/gmapping.rviz" name="rvizconfig"/>
+  <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
+  <param name="use_gui" value="$(arg gui)"/>
+  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/> -->
+
+</launch>
