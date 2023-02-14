@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# auto_nav_robot
-=======
 # Autonomous Navigation Robot
 ## Robot with SLAM & Autonomous Navigation
 <br>
